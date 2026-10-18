@@ -41,25 +41,25 @@
             <div class="card">
                 <h3>Carga y Uptime del Sistema</h3>
                 <!-- Ejecución de uptime para mostrar tiempo en línea y promedio de carga[cite: 2] -->
-                <pre><?php echo shell_exec('uptime'); ?></pre>
+                <pre><?php echo shell_exec('/usr/bin/uptime 2>&1'); ?></pre>
             </div>
 
             <div class="card">
                 <h3>Monitoreo de Memoria RAM</h3>
                 <!-- Extracción de métricas vía free -h[cite: 2] -->
-                <pre><?php echo shell_exec('free -h'); ?></pre>
+                <pre><?php echo shell_exec('/usr/bin/free -h 2>&1'); ?></pre>
             </div>
 
             <div class="card">
                 <h3>Almacenamiento de Disco</h3>
                 <!-- Estado de montaje y porcentaje de uso del sistema de archivos principal[cite: 2] -->
-                <pre><?php echo shell_exec('df -h /'); ?></pre>
+                <pre><?php echo shell_exec('/bin/df -h / 2>&1'); ?></pre>
             </div>
 
             <div class="card">
                 <h3>Top 10 Procesos del Sistema</h3>
                 <!-- Despliegue dinámico de los 10 procesos con mayor consumo de recursos[cite: 2] -->
-                <pre><?php echo shell_exec('ps aux --sort=-%cpu | head -n 11'); ?></pre>
+                <pre><?php echo shell_exec('/bin/ps aux --sort=-%cpu | head -n 11 2>&1'); ?></pre>
             </div>
         </div>
     </main>
